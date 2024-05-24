@@ -1,7 +1,8 @@
 import numpy as np
 
 def conjugate_gradient(A,b):
-    """Out: the solution of the linear equations system Ax=b."""
+    """Out: the solution of the linear equations system Ax=b.
+    But A must necessarily be positive definite. Explore bi-conjugate gradient method to workaround."""
     x0,epsilon,kmax = np.zeros(b.shape),1e-16,2000
     r0 = A.dot(x0) - b
     w0 = -r0
